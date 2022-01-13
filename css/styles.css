@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #02022c;
+  font-family: "Montserrat", sans-serif;
+  padding: 3rem 2rem;
+  color: #fff;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+}
+
+.formulario {
+  background: rgba(255, 255, 255, 0.4);
+  color: #fff;
+  padding: 1rem;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  border: 0px solid #fff;
+  text-align: center;
+}
+
+.formulario h2 {
+  color: #fffd;
+  font-weight: 300;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.formulario input {
+  background: rgba(255, 255, 255, 0.3);
+  border: 0;
+  width: 50%;
+  padding: 0.8rem 0.8rem;
+  border-radius: 10px;
+  font-weight: 300;
+  outline: none;
+  color: #fff;
+}
+
+.pixel h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.pixel {
+  background: rgba(255, 255, 255, 0.4);
+  color: #fff;
+  padding: 1rem;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  border: 0px solid #fff;
+  text-align: center;
+}
+
+.pixel input {
+  background: rgba(255, 255, 255, 0.3);
+  border: 0;
+  width: 50%;
+  padding: 0.8rem 0.8rem;
+  border-radius: 10px;
+  font-weight: 300;
+  outline: none;
+  color: #fff;
+}
+
+.pixel select {
+  width: 50%;
+  height: 3.5vh;
+  font-size: 1.1rem;
+  font-weight: 400;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.pixel .botao button {
+  background: #ffc600;
+  border: 0;
+  width: 50%;
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.player {
+  text-align: center;
+  margin-top: 5rem;
+  position: relative;
+  font-size: 0;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  overflow: hidden;
+}
+
+.player video {
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  width: 100%;
+}
+
+/* This css is only applied when fullscreen is active. */
+.player:fullscreen {
+  max-width: none;
+  width: 100%;
+}
+
+.player:-webkit-full-screen {
+  max-width: none;
+  width: 100%;
+}
+
+.player__button {
+  background: none;
+  border: 0;
+  line-height: 1;
+  color: white;
+  text-align: center;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+  max-width: 50px;
+}
+
+.player__button:focus {
+  border-color: #ffc600;
+}
+
+.player__slider {
+  width: 10px;
+  height: 30px;
+}
+
+.player__controls {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(100%) translateY(-5px);
+  transition: all 0.3s;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.player:hover .player__controls {
+  transform: translateY(0);
+}
+
+.player:hover .progress {
+  height: 15px;
+}
+
+.player__controls > * {
+  flex: 1;
+}
+
+.progress {
+  flex: 10;
+  position: relative;
+  display: flex;
+  flex-basis: 100%;
+  height: 5px;
+  transition: height 0.3s;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: ew-resize;
+}
+
+.progress__filled {
+  width: 50%;
+  background: #ffc600;
+  flex: 0;
+  flex-basis: 50%;
+}
+
+/* unholy css to style input type="range" */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background: transparent;
+  width: 100%;
+  margin: 0 5px;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #ffc600;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+input[type="range"]:focus::-wefbkit-slider-runnable-track {
+  background: #bada55;
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: #ffffff;
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #ffc600;
+  cursor: pointer;
+}
+
+.copy {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.copy h4 {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.copy .area input {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border: 0;
+  width: 40%;
+  padding: 0.8rem 1rem;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+  outline: no;
+}
+
+.copy .area button {
+  background: #ffc600;
+  border: 0;
+  width: 15%;
+  padding: 0.6em 0;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  outline: 0;
+  cursor: pointer;
+}
+
+.comprar-agora {
+  background: rgba(255, 255, 255, 0.3);
+  width: 25%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 10px;
+  padding: 1rem;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.comprar-agora h3 {
+  font-weight: 600;
+}
+
+.comprar-agora {
+  text-align: center;
+}
+
+.comprar-agora span {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.comprar-agora h4 {
+  font-size: 1.8rem;
+  padding-top: 0.5rem;
+}
+
+.comprar-agora .botao {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.comprar-agora button {
+  background: #ffc600;
+  border: 0;
+  border-radius: 0px;
+  font-size: 1rem;
+  padding: 0.8rem 3rem;
+  font-weight: 800;
+  color: #02022c;
+  cursor: pointer;
+}
+
+.comprar-agora2 {
+  background: #fff;
+  width: 25%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 10px;
+  padding: 1rem;
+  color: #02022c;
+  border: 2px solid #fff;
+}
+
+.comprar-agora2 h3 {
+  font-weight: 600;
+}
+
+.comprar-agora2 .botao {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.comprar-agora2 {
+  text-align: center;
+}
+
+.comprar-agora2 span {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.comprar-agora2 h4 {
+  font-size: 1.8rem;
+  padding-top: 0.5rem;
+}
+
+.comprar-agora2 button {
+  background: #000000;
+  border: 0;
+  border-radius: 0px;
+  font-size: 1rem;
+  padding: 0.8rem 3rem;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.modelos-cards {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
