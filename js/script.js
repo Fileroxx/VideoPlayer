@@ -48,7 +48,7 @@ function skip() {
 
 function handleRangeUpdate() {
     video[this.name] = this.value;
-    console.log(this.name);
+    console.log(this.name); 
     console.log(this.value);
     
 }
@@ -57,24 +57,6 @@ function handleProgress() {
     const percent = (video.currentTime / video.duration) * 100;
     progressBar.style.flexBasis = `${percent}%`;
 }
- 
-function scrub(e) {
-    const scrubTime = (e.offSetX / progress.offsetWidth)
-    console.log(e);
-}
-
-
-function copiarElemento() {
-   
-
-    copyText.select();
-    copyText.setSelectionRage(0, 99999);
-
-    navigator.clipboard.writeText(copyText.value);
-
-    alert("Copied the text:" + copyText.value)
-
-}
 
 
 /* HOOK UP THE EVENT LISTENERS */
@@ -82,9 +64,7 @@ video.addEventListener('click', togglePlay);
 video.addEventListener('play', updateButton);
 video.addEventListener('pause', updateButton);
 video.addEventListener('timeupdate', handleProgress);
-video.addEventListener('click', toggleMute)
-
-copyElement.addEventListener('click', copiarElemento)
+video.addEventListener('click', toggleMute);
 
 toggle.addEventListener('click', togglePlay);
 skipButtons.forEach(button => button.addEventListener('click', skip));
