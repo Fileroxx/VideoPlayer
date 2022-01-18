@@ -39,7 +39,7 @@
         <h2>Personalize seu vídeo</h2>
 
         <label for="">Escolha o seu vídeo:</label>
-        <input style="background: none;" type="file" name="" id="">
+        <input style="background: none;" type="file" name="iframefile" id="iframefile">
 
         <br><br>
 
@@ -49,7 +49,7 @@
                 <label for="">Cor dos controles do vídeo:</label>
 
                 <label for="colorPicker" style="padding-left: .5rem;">
-                    <input type="color" name="color" id="colorPicker" value="#1dbbce">
+                    <input type="color" name="color" id="colorPicker" >
                 </label>
             </div>
 
@@ -58,18 +58,18 @@
         <br><br>
 
         <label class="form-switch">
-        <input type="checkbox" name="" id="">
+        <input type="checkbox" name="" id="" checked>
         <i></i>
-        (Autoplay)
+        (Autoplay) - Recomendado
         <br><br>
         </label>
 
         <br>
 
         <label class="form-switch">
-            <input type="checkbox" name="" id="">
+            <input type="checkbox" name="" id="" checked>
             <i></i>
-            (Aviso 'Aumente o Som')
+            (Aviso 'Aumente o Som') - Recomendado
             <br><br>
             </label>
        
@@ -77,45 +77,39 @@
     </div>
 
 
-    <!-- <div class="produto">
+    <div class="produto">
 
         <h3>Produto</h3>
         <br>
-
-        <label for="produto">
-            Escolha a foto do produto:
-            <input type="file" name="fotoProduto" id="fotoProduto">
-        </label>
-        <br>
-
         <label for="">
-            Preço
-
-            <input type="text" name="de" id="de" placeholder="De:">
-            <input type="text" name="por" id="por" placeholder="Por:">
-
+            Link do Produto
+            <input type="url" name="urlProduct" id="urlProduct" placeholder="https://yampi.com/products/135415154">
         </label>
-        <br>
-
-        <label for="corCard">
-            Cor do botão:
-            <input type="color" name="corCard" id="corCard">
+        <br><br>
+        
+        <label for="">Definir tempo/ação no vídeo (00:00)
+            <input id="tempo" type="time">
         </label>
+        <br><br>
+    </div>
 
-    </div> -->
 
     <div class="pixel">
         <h3>Pixel</h3>
         <br>
-        <select name="pixel" id="pixel">
-            <option value="servicos">Serviços</option>
-            <option value="facebook">Facebook</option>
-            <option value="google-ads">Google Ads</option>
-            <option value="taboola">Taboola</option>
-            <option value="outbrain">Outbrain</option>
-            <option value="pinterest">Pinterest</option>
-            <option value="tiktok">TikTok</option>
-        </select>
+        
+        <label for="">
+            Serviços
+            <select name="pixel" id="pixel">
+                <option value="facebook">Facebook</option>
+                <option value="google-ads">Google Ads</option>
+                <option value="taboola">Taboola</option>
+                <option value="outbrain">Outbrain</option>
+                <option value="pinterest">Pinterest</option>
+                <option value="tiktok">TikTok</option>
+            </select>
+        </label>
+
 
         <br><br>
 
@@ -137,10 +131,7 @@
             <option value="google-ads">Valor dos produtos + Frete</option>
         </select>
 
-        <br><br>
 
-        <label for="">Definir tempo/ação no vídeo (00:00)</label>
-        <input type="time">
 
         <br><br>
 
@@ -151,22 +142,13 @@
 
     </div>
 
+        <div id="result"></div>
+
     <div class="player">
     
         <video class="player__video viewner" width="50%" autoplay="true" muted loop>
             <source src="src/casimiro.mp4" type="video/mp4">
         </video>
-
-        <div class="aumentarVolume">
-
-            <div class="icone">
-
-            </div>
-
-            <h4>Aumentar Volume</h4>
-
-        </div>
-
 
         <div class="player__controls">
 
@@ -182,7 +164,7 @@
             >
         
             <button class="player__button" onclick="toggleMute()">
-                Mute
+                Vol/Mute
             </button>
 
             <button data-skip="-10" class="player__button">
@@ -193,7 +175,14 @@
             </button>
 
         </div>
+
+
+
     </div>
+
+
+
+
 
     <div class="copy">
 
@@ -201,7 +190,9 @@
 
     <div class="area">
 
-        <input type="text" id="copiar" value="<iframe src='videocommerce.com.br/video/149184791349'><iframe>">
+        <input type="text" id="copiar" value="
+        <src='videocommerce.com.br/video/149184791349'><iframe>
+        ">
         <button onclick="copiarelemento()">Copiar</button>
     </div>
      
@@ -210,49 +201,6 @@
     </div>
 
 
-    <div class="modelos-cards">
-
-        <h2>MODELOS CARDS - COMPRAR AGORA</h2>
-
-        <div class="comprar-agora">
-
-            <div class="imagem">
-                <img width="100%" src="src/revita.png" alt=""> 
-            </div>
-    
-            <span>DE: R$149</span>
-            <h4>POR: R$99</h4>
-    
-            <div class="botao">
-                <button>Comprar agora</button>
-            </div>
-            
-    
-        </div>
-    
-    
-    
-    
-        <div class="comprar-agora2">
-    
-        
-    
-            <div class="imagem">
-                <img width="100%" src="src/revita.png" alt="">
-            </div>
-    
-            <span>DE: R$149</span>
-            <h4>POR: R$99</h4>
-    
-    
-            <div class="botao">
-                <button>Comprar agora</button>
-            </div>
-            
-    
-        </div>
-    
-    </div>
 
     <script>
         function sweetalertclick() {
@@ -295,12 +243,13 @@
         console.log(targetLabel)
 
 
-
-
     </script>
 
     <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.4/dist/sweetalert2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/fontawesome.min.js" integrity="sha512-vF2g7ozd8M2AA8re3eCrfJT2vvrOmIbW9JhodInQHN5Xjg6ec6nJpMJQcwuXm+aOhQze+CrM2rFQLftMtQA+bA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
 </body>
 </html>
